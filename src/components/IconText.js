@@ -6,7 +6,7 @@ const IconText = ({ iconName, iconColor, textString }) => {
     return (
         <View>
             <Feather name = {iconName} size = {50} color = {iconColor}/>
-            <Text style = {styles.populationText}>10000</Text>
+            <Text style = {styles.populationText}>{textString}</Text>
         </View>
     )
 }
