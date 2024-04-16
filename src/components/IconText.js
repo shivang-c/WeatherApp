@@ -4,15 +4,20 @@ import { Feather } from '@expo/vector-icons';
 
 const IconText = ({ iconName, iconColor, textString }) => {
     return (
-        <View>
+        <>
             <Feather name = {iconName} size = {50} color = {iconColor}/>
             <Text style = {styles.populationText}>10000</Text>
-        </View>
+        </>
     )
 }
 
 const styles = StyleSheet.create({
-
+    populationText: {
+        fontSize: 25,
+        marginLeft: 7.5,
+        color: 'red',
+        fontWeight: 'bold'
+    }
 })
 
 export default IconText
