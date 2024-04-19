@@ -8,7 +8,7 @@ import City from './src/screens/City';
 const App = () => {
   return (
     <SafeAreaProvider style = {styles.container}>
-      <City />
+      <UpcomingWeather />
     </SafeAreaProvider>
   )
 }
