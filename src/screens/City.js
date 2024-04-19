@@ -1,6 +1,5 @@
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { Text, StyleSheet, ImageBackground, View } from "react-native";
+import { Text, StyleSheet, ImageBackground, View, SafeAreaView } from "react-native";
 import IconText from "../components/IconText";
 
 const City = () => {

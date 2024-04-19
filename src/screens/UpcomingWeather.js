@@ -1,6 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, FlatList, ImageBackground } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Text, StyleSheet, FlatList, ImageBackground, SafeAreaView } from 'react-native';
 import ListItem from '../components/ListItem';
 
 const DATA = [
