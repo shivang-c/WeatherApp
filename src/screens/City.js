@@ -1,24 +1,24 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Text, StyleSheet, ImageBackground, View } from "react-native";
-import { Feather } from '@expo/vector-icons';
 import IconText from "../components/IconText";
 
 const City = () => {
+    const { container, city, country, locationText, populationWrapper, populationText, rowLayout, riseSetWrapper, riseSetText} = styles;
     return (
-        <SafeAreaView style = {styles.container}>
+        <SafeAreaView style = {container}>
             <ImageBackground 
                 source = {require('../../assets/city-background.jpg')}
                 style = {styles.imageLayout} 
             >
-                <Text style = {[styles.city, styles.locationText]}>Gurugram</Text>
-                <Text style = {[styles.country, styles.locationText]}>India</Text>
-                <View style = {styles.populationWrapper}>
-                    <IconText iconName = {'users'} iconColor = {'red'} textString = {'10000'} textStyle = {styles.populationText}/>
+                <Text style = {[city, locationText]}>Gurugram</Text>
+                <Text style = {[country, locationText]}>India</Text>
+                <View style = {[populationWrapper, rowLayout]}>
+                    <IconText iconName = {'users'} iconColor = {'red'} textString = {'10000'} textStyle = {populationText} />
                 </View>
-                <View style = {styles.riseSetWrapper}>
-                    <IconText iconName = {'sunrise'} iconColor = {'yellow'} textString = {'06.21'} textStyle = {styles.riseSetText}/>
-                    <IconText iconName = {'sunset'} iconColor = {'orange'} textString = {'19.23'} textStyle = {styles.riseSetText}/>
+                <View style = {[riseSetWrapper, rowLayout]}>
+                    <IconText iconName = {'sunrise'} iconColor = {'yellow'} textString = {'06.21:58 AM'} textStyle = {riseSetText} />
+                    <IconText iconName = {'sunset'} iconColor = {'orange'} textString = {'19.23:46 AM'} textStyle = {riseSetText} />
                 </View>
             </ImageBackground>
         </SafeAreaView>
@@ -45,8 +45,6 @@ const styles = StyleSheet.create({
         color: 'white'
     },
     populationWrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
         justifyContent: 'center',
         marginTop: 30
     },
@@ -56,14 +54,16 @@ const styles = StyleSheet.create({
         color: 'red'
     },
     riseSetWrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
         justifyContent: 'space-around',
         marginTop: 30
     },
     riseSetText: {
         fontSize: 20,
         color: 'white'
+    }, 
+    rowLayout: {
+        flexDirection: 'row',
+        alignItems: 'center',
     }
 })
 
