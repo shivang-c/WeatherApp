@@ -1,6 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, FlatList, ImageBackground } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Text, StyleSheet, FlatList, ImageBackground, SafeAreaView } from 'react-native';
 import ListItem from '../components/ListItem';
 
 const DATA = [
@@ -124,20 +123,20 @@ const DATA = [
 ]
 
 const UpcomingWeather = () => {
-    const source = require('../../assets/upcoming-background.jpg')
-    
-    const renderItem = ({ item }) => <ListItem 
+    const renderItem = ({ item }) => 
+    <ListItem 
         condition = {item.weather[0].main} 
         dt_txt = {item.dt_txt} 
         min = {item.main.temp_min} 
-        max = {item.main.temp_max} />
+        max = {item.main.temp_max} 
+    />
 
     const { container, image, heading } = styles;
     
     return (
         <SafeAreaView style = {container}>
             <ImageBackground 
-                source = {source} 
+                source = {require('../../assets/upcoming-background.jpg')} 
                 style = {image}
             >
                 <Text style = {heading}>Upcoming Weather</Text>
