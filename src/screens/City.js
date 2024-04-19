@@ -14,13 +14,11 @@ const City = () => {
                 <Text style = {[styles.city, styles.locationText]}>Gurugram</Text>
                 <Text style = {[styles.country, styles.locationText]}>India</Text>
                 <View style = {styles.populationWrapper}>
-                    <IconText iconName = {'users'} iconColor = {'red'} textString = {'10000'}/>
+                    <IconText iconName = {'users'} iconColor = {'red'} textString = {'10000'} textStyle = {styles.populationText}/>
                 </View>
                 <View style = {styles.riseSetWrapper}>
-                    <Feather name = {'sunrise'} size = {50} color = {'yellow'}/>
-                    <Text style = {styles.riseSetText}>06:21</Text>
-                    <Feather name = {'sunset'} size = {50} color = {'orange'}/>
-                    <Text style = {styles.riseSetText}>19:23</Text>
+                    <IconText iconName = {'sunrise'} iconColor = {'yellow'} textString = {'06.21'} textStyle = {styles.riseSetText}/>
+                    <IconText iconName = {'sunset'} iconColor = {'orange'} textString = {'19.23'} textStyle = {styles.riseSetText}/>
                 </View>
             </ImageBackground>
         </SafeAreaView>
@@ -55,8 +53,7 @@ const styles = StyleSheet.create({
     populationText: {
         fontSize: 25,
         marginLeft: 7.5,
-        color: 'red',
-        fontWeight: 'bold'
+        color: 'red'
     },
     riseSetWrapper: {
         flexDirection: 'row',
@@ -66,8 +63,7 @@ const styles = StyleSheet.create({
     },
     riseSetText: {
         fontSize: 20,
-        color: 'white',
-        fontWeight: 'bold'
+        color: 'white'
     }
 })
 
