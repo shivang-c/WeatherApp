@@ -7,7 +7,7 @@ import { useGetWeather } from './hooks/useGetWeather';
 
 const App = () => {
   const { error, loading, weather } = useGetWeather();
-  console.log(loading, error, weather);
+  //console.log(loading, error, weather);
   
   if(error !== null) {
     return <Error error = {error} />
@@ -20,7 +20,7 @@ const App = () => {
   } else if(!loading) {
     return (
       <NavigationContainer>
-        <Tabs />
+        <Tabs weather = {weather}/>
       </NavigationContainer>
     )
   } else return null;
