@@ -1,23 +1,26 @@
 import React from "react";
 import { Text, StyleSheet, ImageBackground, View, SafeAreaView } from "react-native";
 import IconText from "../components/IconText";
+import moment from "moment";
 
-const City = () => {
-    const { container, city, country, locationText, populationWrapper, populationText, rowLayout, riseSetWrapper, riseSetText} = styles;
+const City = ({ weatherData }) => {
+    const { container, cityStyles, countryStyles, locationText, populationWrapper, populationText, rowLayout, riseSetWrapper, riseSetText} = styles;
+    const { name, country, population, sunrise, sunset} = weatherData;
+
     return (
         <SafeAreaView style = {container}>
             <ImageBackground 
                 source = {require('../../assets/city-background.jpg')}
                 style = {styles.imageLayout} 
             >
-                <Text style = {[city, locationText]}>Gurugram</Text>
-                <Text style = {[country, locationText]}>India</Text>
+                <Text style = {[cityStyles, locationText]}>{name}</Text>
+                <Text style = {[countryStyles, locationText]}>{country}</Text>
                 <View style = {[populationWrapper, rowLayout]}>
-                    <IconText iconName = {'users'} iconColor = {'red'} textString = {'10000'} textStyle = {populationText} />
+                    <IconText iconName = {'users'} iconColor = {'red'} textString = {`Population: ${population}`} textStyle = {populationText} />
                 </View>
                 <View style = {[riseSetWrapper, rowLayout]}>
-                    <IconText iconName = {'sunrise'} iconColor = {'yellow'} textString = {'06.21:58 AM'} textStyle = {riseSetText} />
-                    <IconText iconName = {'sunset'} iconColor = {'orange'} textString = {'19.23:46 AM'} textStyle = {riseSetText} />
+                    <IconText iconName = {'sunrise'} iconColor = {'yellow'} textString = {moment(sunrise).format('h:mm:ss a')} textStyle = {riseSetText} />
+                    <IconText iconName = {'sunset'} iconColor = {'orange'} textString = {moment(sunset).format('h:mm:ss a')} textStyle = {riseSetText} />
                 </View>
             </ImageBackground>
         </SafeAreaView>
@@ -31,10 +34,10 @@ const styles = StyleSheet.create({
     imageLayout: {
         flex: 1
     },
-    city: {
+    cityStyles: {
         fontSize: 40,
     },
-    country: {
+    countryStyles: {
         fontSize: 40,
     },
     locationText: {

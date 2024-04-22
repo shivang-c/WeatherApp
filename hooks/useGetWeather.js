@@ -6,7 +6,7 @@ export const useGetWeather = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [weather, setWeather] = useState([])
-
+  
   const fetchWeatherData = async (lat, lon) => {
     try {
       const res = await fetch(
